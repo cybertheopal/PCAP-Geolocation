@@ -49,9 +49,44 @@ Open your `.pcap` file in Wireshark.
 
 ---
 
-## 4. 🔍 Filter and Investigate Further
+## 4. 🔍 Deep Dive: ASN and TTL Analysis
 
-### 🌍 Filter by Country  
-To isolate traffic from a specific country (e.g., China), use:
-```wireshark
-ip.geoip.country == "CN"
+### 🛰️ Check ASN Info  
+Use the ASN (Autonomous System Number) field in Wireshark to identify the origin of IP traffic.  
+- This is especially useful for spotting traffic coming from cloud hosting services or known malicious networks.  
+- ASN lookups can help determine if the traffic is part of a known organization or a potential threat.
+
+### ⏱️ Inspect TTL Values  
+Examine **Time To Live (TTL)** values to estimate how far the source IP may be.  
+- Different operating systems and networks use different starting TTL values.  
+- Comparing TTL values can help detect spoofed packets or multiple sources pretending to be one.
+
+---
+
+## 5. 🚨 Identify Signs of a DDoS Attack
+
+### ⚠️ Look for Red Flags  
+Watch for these common indicators of a DDoS or scripted attack:
+- Repeated or identical **IP ID** values across various source IPs  
+- Sequential or patterned **TCP Sequence Numbers**  
+- Source IPs that appear randomized or spoofed
+
+These patterns often suggest automated tools or botnets.
+
+### 🔒 Take Action  
+Once you've identified potential threats, consider these response steps:
+- 🛑 **Block or blacklist** suspicious IPs or CIDR blocks using your firewall or IDS/IPS  
+- 📝 **Log and monitor** ongoing activity for escalation or persistence  
+- 📤 **Report** bad actors to relevant hosting providers, threat intel platforms, or security communities
+
+---
+
+## ✅ Conclusion
+
+With Wireshark and the MaxMind GeoIP databases, you can gain deeper insight into where your network traffic is coming from and what it might mean.  
+By combining traditional packet inspection with geolocation and ASN analysis, you're better equipped to:
+- Investigate abnormal patterns
+- Trace malicious behavior
+- Take timely action to protect your systems
+
+
