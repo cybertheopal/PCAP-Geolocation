@@ -42,7 +42,7 @@ After logging in:
 
 ### Load the PCAP File
 
-Open your `.pcap` file in Wireshark.
+Open `.pcap` file in Wireshark.
 
 ### Identify Suspicious Patterns
 
