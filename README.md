@@ -76,9 +76,9 @@ Examine **Time To Live (TTL)** values to estimate how far the source IP may be.
 
 ## 5. Identify Signs of a DDoS Attack
 
-### Look for Red Flags
+### Red Flags
 
-Watch for these common indicators of a DDoS or scripted attack:
+Be on the look out for these common indicators of a DDoS or scripted attack:
 
 - Repeated or identical **IP ID** values across various source IPs  
 - Sequential or patterned **TCP Sequence Numbers**  
@@ -88,7 +88,7 @@ These patterns often suggest automated tools or botnets.
 
 ### Take Action
 
-Once you've identified potential threats, consider these response steps:
+Once you've identified potential threats, respond with these steps:
 
 - **Block or blacklist** suspicious IPs or CIDR blocks using your firewall or IDS/IPS  
 - **Log and monitor** ongoing activity for escalation or persistence  
